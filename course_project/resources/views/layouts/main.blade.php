@@ -10,7 +10,7 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="mb-5 bg-secondary navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{route('book.index')}}">COURSE BOOK</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
@@ -24,7 +24,7 @@
         <li class='nav-item'><a class="nav-link" href="{{route('book.index')}}">Книги</a></li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="btn btn-dark text-info nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Добавить
           </a>
           <ul class="dropdown-menu">
@@ -41,7 +41,7 @@
         </li> -->
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+        <input class="form-control me-2" type="search" placeholder="ПОИСК НЕ РАБОТАЕТ" aria-label="Поиск">
         <button class="btn btn-outline-success" type="submit">Поиск</button>
       </form>
     </div>

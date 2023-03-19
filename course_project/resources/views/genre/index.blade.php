@@ -1,7 +1,8 @@
 @extends('layouts/main')
 
 @section('content')
-<table class="table">
+<h1 class='text-center mb-3'>ЖАНРЫ</h1>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">Название</th>

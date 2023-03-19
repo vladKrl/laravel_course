@@ -32,7 +32,13 @@ class BookController extends Controller
             'genre_id' => 'required',
             'image' => 'exclude_without:image|file',
         ]);
-        
+
+        if (isset($data['image'])) {
+            $data['image'] = Storage::disk('public')->put('/images/books', $data['image']);
+        } else {
+            $data['image'] = 'images/undefined.jpg';
+        }
+    
         Book::create($data);
 
         return redirect()->route('book.index');
@@ -45,11 +51,11 @@ class BookController extends Controller
     }
 
     public function edit(Book $book){
-        $author = $book->author;
-        $genre = $book->genre;
+        // $author = $book->author;
+        // $genre = $book->genre;
         $authors =  Author::all();
         $genres =  Genre::all();
-        return view('book.edit', compact('book', 'author', 'genre', 'authors', 'genres'));
+        return view('book.edit', compact('book', 'authors', 'genres'));
     }
 
     public function update(Book $book){
@@ -60,6 +66,10 @@ class BookController extends Controller
             'genre_id' => 'required',
             'image' => 'exclude_without:image|file',
         ]);
+        
+        if (isset($data['image'])) {
+            $data['image'] = Storage::disk('public')->put('/images/books', $data['image']);
+        }
         
         $book->update($data);
         

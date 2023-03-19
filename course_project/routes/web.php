@@ -84,3 +84,6 @@ Route::patch('/books/{book}', [BookController::class, 'update'])->name('book.upd
 // Delete Book
 Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('book.delete');
 // Route::get('/genres', [GenreController::class, 'index'])->name('genre.index');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

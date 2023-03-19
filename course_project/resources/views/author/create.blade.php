@@ -26,8 +26,8 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label value="{{old('deathday')}}" for="deathday" class="form-label">Дата смерти</label>
-      <input name='deathday' type='date' class="form-control" id="deathday">
+      <label for="deathday" class="form-label">Дата смерти</label>
+      <input value="{{old('deathday')}}" name='deathday' type='date' class="form-control" id="deathday">
     </div>
     <div class="mb-3">
       <label for="image" class="form-label">Изображение</label>

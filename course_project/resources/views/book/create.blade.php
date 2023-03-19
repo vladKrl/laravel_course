@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-  <form action="{{route('book.store')}}" method='POST'>
+  <form action="{{route('book.store')}}" method='POST' enctype='multipart/form-data'>
     @csrf
     <div class="mb-3">
       <label for="title" class="form-label">Название книги *</label>
@@ -29,7 +29,7 @@
     </div>
     <div class="mb-3">
       <label for="genre_id" class="form-label">Жанр</label>
-      <select id='author_id' class="mb-2 form-select" name='genre_id'>
+      <select id='genre_id' class="mb-2 form-select" name='genre_id'>
       @foreach($genres as $genre)
         <option {{old('genre_id') == $genre->id ? 'selected':'' }} value='{{$genre->id}}'>{{$genre->title}}</option>
       @endforeach

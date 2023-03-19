@@ -4,7 +4,8 @@
 <!-- <div>
     <a href="{{route('author.create')}}" class="btn btn-primary">Добавить писателя</a>
 </div> -->
-<table class="table">
+<h1 class='text-center mb-3'>АВТОРЫ</h1>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">Полное имя</th>

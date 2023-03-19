@@ -1,7 +1,8 @@
 @extends('layouts/main')
 
 @section('content')
-<table class="table">
+<h1 class='text-center mb-3'>КНИГИ</h1>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">Название</th>
@@ -14,7 +15,7 @@
     @foreach($books as $book)
     <tr>
       <td><a class="link-dark" href="{{route('book.show', $book->id)}}">{{$book->title}}</a></td>
-      <td>{{$book->short}}</td>
+      <td  class='w-50'>{{$book->short}}</td>
       <td><a class="link-dark" href="{{route('author.show', $book->author_id)}}">{{$book->author->fullname}}</a></td>
       <td><a class="link-dark" href="{{route('genre.show', $book->genre_id)}}">{{$book->genre->title}}</a></td>
     </tr>

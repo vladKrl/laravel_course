@@ -30,7 +30,8 @@ class GenreController extends Controller
     }
 
     public function show(Genre $genre){
-        return view('genre.show', compact('genre'));
+        $books = $genre->books;
+        return view('genre.show', compact('genre', 'books'));
     }
 
     public function edit(Genre $genre){

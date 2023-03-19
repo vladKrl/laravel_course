@@ -26,15 +26,21 @@ class AuthorController extends Controller
             'image' => 'exclude_without:image|file',
         ]);
 
-        $data['image'] = Storage::put('/public', $data['image']);
-
+        if (isset($data['image'])) {
+            $data['image'] = Storage::disk('public')->put('/images/authors', $data['image']);
+        } else {
+            $data['image'] = 'images/undefined.jpg';
+        }
+    
         Author::create($data);
 
         return redirect()->route('author.index');
     }
 
     public function show(Author $author){
-        return view('author.show', compact('author'));
+        $books = $author->books;
+   
+        return view('author.show', compact('author', 'books'));
     }
 
     
@@ -48,9 +54,15 @@ class AuthorController extends Controller
             'birth_country' => 'required|string',
             'birthday' => 'required|date',
             'deathday' => 'exclude_without:deathday|date',
-            'image' => 'exclude_without:image|file',
+            'image' => 'nullable|file',
         ]);
-        
+
+        if (isset($data['image'])) {
+            $data['image'] = Storage::disk('public')->put('/images/authors', $data['image']);
+        }
+
+        // $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+
         $author->update($data);
         
         return redirect()->route('author.show', $author->id);

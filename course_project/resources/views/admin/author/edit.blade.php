@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-  <form action="{{route('author.update', $author->id)}}" method='POST' enctype="multipart/form-data">
+  <form action="{{route('admin.author.update', $author->id)}}" method='POST' enctype="multipart/form-data">
     @csrf
     @method('patch')
     <div class="mb-3">
@@ -36,7 +36,7 @@
     </div>
     <div>
       <button type="submit" class="btn btn-primary">Редактировать</button>
-      <a class="btn btn-danger" href="{{route('author.show', $author->id)}}">Назад</a>
+      <a class="btn btn-danger" href="{{route('admin.author.index')}}">Назад</a>
     </div>
   </form>
 </div>

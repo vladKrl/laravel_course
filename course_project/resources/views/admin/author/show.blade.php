@@ -10,11 +10,11 @@
     @if ($author->deathday)
     <h5 class="card-title">Дата смерти - {{$author->deathday}}</h5>
     @endif
-    <form action="{{route('author.delete', $author->id)}}" method="POST">
+    <form action="{{route('admin.author.delete', $author->id)}}" method="POST">
       @csrf
       @method('delete')    
-      <a href="{{route('author.index')}}" class="btn btn-primary">Вернуться</a>
-      <a class="btn btn-primary" href="{{route('author.edit', $author->id)}}">Редактировать</a>
+      <a href="{{route('admin.author.index')}}" class="btn btn-primary">Вернуться</a>
+      <a class="btn btn-primary" href="{{route('admin.author.edit', $author->id)}}">Редактировать</a>
       <button type="submit" class="btn btn-danger">Удалить</button>
     </form>
     

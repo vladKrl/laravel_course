@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-  <form action="{{route('book.store')}}" method='POST' enctype='multipart/form-data'>
+  <form action="{{route('admin.book.store')}}" method='POST' enctype='multipart/form-data'>
     @csrf
     <div class="mb-3">
       <label for="title" class="form-label">Название книги *</label>
@@ -25,7 +25,7 @@
         <option {{old('author_id') == $author->id ? 'selected':'' }} value='{{$author->id}}'>{{$author->fullname}}</option>
       @endforeach
       </select>
-      <a href="{{route('author.create')}}" class="btn btn-primary">Добавить писателя</a>
+      <a href="{{route('admin.author.create')}}" class="btn btn-primary">Добавить писателя</a>
     </div>
     <div class="mb-3">
       <label for="genre_id" class="form-label">Жанр</label>
@@ -34,7 +34,7 @@
         <option {{old('genre_id') == $genre->id ? 'selected':'' }} value='{{$genre->id}}'>{{$genre->title}}</option>
       @endforeach
       </select>
-      <a href="{{route('genre.create')}}" class="btn btn-primary">Добавить жанр</a>
+      <a href="{{route('admin.genre.create')}}" class="btn btn-primary">Добавить жанр</a>
     </div>
     <div class="mb-3">
       <label for="image" class="form-label">Изображение</label>
@@ -42,7 +42,7 @@
     </div>
     <div>
       <button type="submit" class="btn btn-primary">Создать</button>
-      <a href="{{route('book.index')}}" class="btn btn-danger">Назад</a>
+      <a href="{{route('admin.book.index')}}" class="btn btn-danger">Назад</a>
     </div>
   </form>
 </div>

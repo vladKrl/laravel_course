@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-  <form action="{{route('author.store')}}" method='POST' enctype="multipart/form-data">
+  <form action="{{route('admin.author.store')}}" method='POST' enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
       <label for="fullname" class="form-label">Имя писателя *</label>
@@ -35,7 +35,7 @@
     </div>
     <div>
       <button type="submit" class="btn btn-primary">Создать</button>
-      <a href="{{route('author.index')}}" class="btn btn-danger">Назад</a>
+      <a href="{{route('admin.author.index')}}" class="btn btn-danger">Назад</a>
     </div>
   </form>
 </div>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-  <form action="{{route('genre.store')}}" method='POST'>
+  <form action="{{route('admin.genre.store')}}" method='POST'>
     @csrf
     <div class="mb-3">
       <label for="title" class="form-label">Название жанра</label>
@@ -20,7 +20,7 @@
     </div>
     <div class="mb-3">
       <button type="submit" class="btn btn-primary">Создать</button>
-      <a href="{{route('genre.index')}}" class="btn btn-danger">Назад</a>
+      <a href="{{route('admin.genre.index')}}" class="btn btn-danger">Назад</a>
     </div>
   </form>
 </div>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-  <form action="{{route('book.update', $book->id)}}" method='POST' enctype='multipart/form-data'>
+  <form action="{{route('admin.book.update', $book->id)}}" method='POST' enctype='multipart/form-data'>
     @csrf
     @method('patch')
     <div class="mb-3">
@@ -26,7 +26,7 @@
         <option {{$author->id == $book->author_id ? 'selected':''}} value='{{$author->id}}'>{{$author->fullname}}</option>
       @endforeach
       </select>
-      <a href="{{route('author.create')}}" class="btn btn-primary">Добавить писателя</a>
+      <a href="{{route('admin.author.create')}}" class="btn btn-primary">Добавить писателя</a>
     </div>
     <div class="mb-3">
       <label for="genre_id" class="form-label">Жанр</label>
@@ -35,15 +35,15 @@
         <option {{$genre->id == $book->genre_id ? 'selected':''}} value='{{$genre->id}}'>{{$genre->title}}</option>
       @endforeach
       </select>
-      <a href="{{route('genre.create')}}" class="btn btn-primary">Добавить жанр</a>
+      <a href="{{route('admin.genre.create')}}" class="btn btn-primary">Добавить жанр</a>
     </div>
     <div class="mb-3">
       <label for="image" class="form-label">Изображение</label>
-      <input name='image' class="form-control" type="file" id="image" value='{{$author->image}}'>
+      <input name='image' class="form-control" type="file" id="image" value='{{$book->image}}'>
     </div>
     <div>
       <button type="submit" class="btn btn-primary">Редактировать</button>
-      <a class="btn btn-danger" href="{{route('genre.show', $genre->id)}}">Назад</a>
+      <a class="btn btn-danger" href="{{route('admin.book.index')}}">Назад</a>
     </div>
   </form>
 </div>

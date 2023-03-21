@@ -12,7 +12,7 @@
 
 <nav class="mb-5 bg-secondary navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{route('book.index')}}">COURSE BOOK</a>
+    <a class="navbar-brand" href="{{route('admin.book.index')}}">COURSE BOOK</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,7 +21,7 @@
         
         <li class='nav-item'><a class="nav-link" href="{{route('admin.author.index')}}">Авторы</a></li>
         <li class='nav-item'><a class="nav-link" href="{{route('admin.genre.index')}}">Жанры</a></li>
-        <li class='nav-item'><a class="nav-link" href="{{route('book.index')}}">Книги</a></li>
+        <li class='nav-item'><a class="nav-link" href="{{route('admin.book.index')}}">Книги</a></li>
         <li class="nav-item dropdown">
           <a class="btn btn-dark text-info nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Добавить
@@ -29,7 +29,7 @@
           <ul class="dropdown-menu">
             <li><a href="{{route('admin.genre.create')}}" class="dropdown-item">Добавить жанр</a></li>
             <li><a href="{{route('admin.author.create')}}" class="dropdown-item">Добавить писателя</a></li>
-            <li><a href="{{route('book.create')}}" class="dropdown-item">Добавить книгу</a></li>
+            <li><a href="{{route('admin.book.create')}}" class="dropdown-item">Добавить книгу</a></li>
             <!-- <li><hr class="dropdown-divider"></li> -->
             <!-- <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li> -->
           </ul>

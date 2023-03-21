@@ -29,4 +29,17 @@ class UpdateRequest extends FormRequest
             'image' => 'exclude_without:image|file',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Это поле обязательное!',
+            'title.string' => 'Поле должно соответствовать формату строки!',
+            'short.required' => 'Это поле обязательное!',
+            'short.string' => 'Поле должно соответствовать формату строки!',
+            'author_id.required' => 'Это поле обязательное!',
+            'genre_id.required' => 'Это поле обязательное!',
+            'image.file' => 'Поле должно соответствовать формату файла!',
+        ];
+    }
 }

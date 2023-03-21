@@ -26,4 +26,14 @@ class StoreRequest extends FormRequest
             'short' => 'required|string',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Это поле обязательное!',
+            'title.string' => 'Поле должно соответствовать формату строки!',
+            'short.required' => 'Это поле обязательное!',
+            'short.string' => 'Поле должно соответствовать формату строки!',
+        ];
+    }
 }

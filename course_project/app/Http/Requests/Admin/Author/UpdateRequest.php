@@ -29,4 +29,18 @@ class UpdateRequest extends FormRequest
             'image' => 'nullable|file',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'fullname.required' => 'Это поле обязательное!',
+            'fullname.string' => 'Поле должно соответствовать формату строки!',
+            'birth_country.required' => 'Это поле обязательное!',
+            'birth_country.string' => 'Поле должно соответствовать формату строки!',
+            'birthday.required' => 'Это поле обязательное!',
+            'birthday.date' => 'Поле должно соответствовать формату даты!',
+            'deathday.date' => 'Поле должно соответствовать формату даты!',
+            'image.file' => 'Поле должно соответствовать формату файла!',
+        ];
+    }
 }

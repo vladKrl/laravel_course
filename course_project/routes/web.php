@@ -23,9 +23,40 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', 'IndexController');
 });
 
+Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth']], function () { 
+    Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
+        Route::get('/', 'IndexController')->name('personal.main.index');
+    });
+    Route::group(['namespace' => 'Author', 'prefix' => 'authors'], function () {
+        Route::get('/', 'IndexController')->name('personal.author.index');
+    });
+    Route::group(['namespace' => 'Genre', 'prefix' => 'genres'], function () {
+        Route::get('/', 'IndexController')->name('personal.genre.index');
+    });
+    Route::group(['namespace' => 'Book', 'prefix' => 'books'], function () {
+        Route::get('/{book}', 'ShowController')->name('personal.book.show');
+        Route::group(['namespace' => 'Comment', 'prefix' => '{book}/comments'], function () {
+            Route::post('/', 'StoreController')->name('book.comment.store');
+        });
+        Route::group(['namespace' => 'Like', 'prefix' => '{book}/likes'], function () {
+            Route::post('/', 'StoreController')->name('book.like.store');
+        });
+    });
+    Route::group(['namespace' => 'Liked', 'prefix' => 'liked'], function () {
+        Route::get('/', 'IndexController')->name('personal.liked.index');
+        Route::delete('/{book}', 'DestroyController')->name('personal.liked.delete');
+    });
+    Route::group(['namespace' => 'Comment', 'prefix' => 'comments'], function () {
+        Route::get('/', 'IndexController')->name('personal.comment.index');
+        Route::delete('/{comment}', 'DestroyController')->name('personal.comment.delete');
+        Route::get('/{comment}/edit', 'EditController')->name('personal.comment.edit');
+        Route::patch('/{comment}', 'UpdateController')->name('personal.comment.update');     
+    });
+});
+
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () { 
     Route::group(['namespace' => 'Main'], function () {
-        Route::get('/', 'IndexController');
+        Route::get('/', 'IndexController')->name('admin.main.index');
     });
     Route::group(['namespace' => 'Author', 'prefix' => 'authors'], function () {
         Route::get('/', 'IndexController')->name('admin.author.index');
@@ -65,11 +96,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
     });
 });
 
-// firstOrCreate Author
-// Route::get('/authors/first_or_create', [AuthorController::class, 'firstOrCreate']);
-// firstOrUpdate Author
-// Route::get('/authors/update_or_create', [AuthorController::class, 'updateOrCreate']);
-
+// Route::get('/test', function () {
+//     return '<h5>test</h5>';
+// });
 
 Auth::routes();
 

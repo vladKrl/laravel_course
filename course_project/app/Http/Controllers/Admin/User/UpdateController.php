@@ -12,10 +12,6 @@ class UpdateController extends Controller
     public function __invoke(UpdateRequest $request, User $user){
         $data = $request->validated();
 
-        // if (isset($data['image'])) {
-        //     $data['image'] = Storage::disk('public')->put('/images/authors', $data['image']);
-        // }
-
         $user->update($data);
         
         return redirect()->route('admin.user.show', $user->id); 

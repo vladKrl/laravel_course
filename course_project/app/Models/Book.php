@@ -23,4 +23,8 @@ class Book extends Model
     {
         return $this->belongsTo(Genre::class, 'genre_id', 'id');
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class, 'book_id');
+    }
 }

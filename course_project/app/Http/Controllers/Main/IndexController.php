@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Book, App\Models\Author, App\Models\Genre;
+use App\Models\Book;
 
 
 class IndexController extends Controller

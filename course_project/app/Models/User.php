@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Book;
+use App\Models\Comment;
 
 class User extends Authenticatable
 {
@@ -15,6 +17,14 @@ class User extends Authenticatable
 
     const ROLE_ADMIN = 0;
     const ROLE_READER = 1;
+
+    public function likedBooks(){
+        return $this->belongsToMany(Book::class, 'book_user_likes', 'user_id', 'book_id');
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class, 'user_id');
+    }
 
     public static function getRoles(){
         return [

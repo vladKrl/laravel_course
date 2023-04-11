@@ -9,23 +9,14 @@
 </head>
 <body>
 
-
 <nav class="mb-5 bg-secondary navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{route('admin.book.index')}}">COURSE BOOK</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="#">COURSE BOOK</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class='nav-item'><a class="nav-link" href="{{route('admin.author.index')}}">Авторы</a></li>
-        <li class='nav-item'><a class="nav-link" href="{{route('admin.genre.index')}}">Жанры</a></li>
-        <li class='nav-item'><a class="nav-link" href="{{route('admin.book.index')}}">Книги</a></li>
+        <li class='nav-item'><a class="nav-link" href="{{route('personal.main.index')}}">Вход</a></li>
+        <li class='nav-item'><a class="nav-link" href="{{route('register')}}">Регистрация</a></li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="ПОИСК НЕ РАБОТАЕТ" aria-label="Поиск">
-        <button class="btn btn-outline-secondary" type="submit">Поиск</button>
-      </form>
     </div>
   </div>
 </nav>  

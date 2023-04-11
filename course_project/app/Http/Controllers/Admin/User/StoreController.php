@@ -13,11 +13,6 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request){
         $data = $request->validated();
         $data['password'] = Hash::make($data['password']);
-        // if (isset($data['image'])) {
-        //     $data['image'] = Storage::disk('public')->put('/images/authors', $data['image']);
-        // } else {
-        //     $data['image'] = 'images/undefined.jpg';
-        // }
     
         User::firstOrCreate(['email' => $data['email']], $data);
 
